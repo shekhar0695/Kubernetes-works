@@ -1,0 +1,28 @@
+1 install kubectl
+2 install eksctl and if IAM user i should give policies to access
+3  eksctl create cluster --name my-cluster --region ap-south-1 --version 1.26 --without-nodegroup
+4  eksctl version
+5  sudo apt  install awscli -y
+6  aws configure
+7  eksctl create cluster --name my-cluster --region ap-south-1 --version 1.26 --without-nodegroup
+8  aws eks update-kubeconfig --region ap-south-1 --name my-cluster
+9  kubectl get svc-----(changed apiversion alpha to v1beta1)
+10  aws eks update-kubeconfig --region ap-south-1 --name my-cluster
+11  cd .kube/
+12  vi config
+13  cd
+14  sudo apt install unzip -y
+15  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+16  unzip awscliv2.zip
+17  sudo ./aws/install --update
+18  kubectl get svc
+19  mv ~/.kube/config ~/.kube/config.bk
+20  aws eks update-kubeconfig --region ap-south-1 --name my-cluster
+21  kubectl get svc
+22  cd .ssh
+23  ls
+24  ssh-keygen -t rsa
+25  cd .ssh
+26  eksctl create nodegroup   --cluster my-cluster   --region ap-south-1   --name worker-group   --node-ami-family Ubuntu2004   --node-type t2.micro   --nodes 2   --  nodes-min 2   --nodes-max 4   --ssh-access   --ssh-public-key id_rsa.pub
+27 eksctl delete nodegroup   --cluster my-cluster   --name worker-group   --region ap-south-1
+28 eksctl delete cluster --name my-cluster
