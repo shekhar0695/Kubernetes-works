@@ -1,6 +1,6 @@
 # Kubernetes-works
 
-Firstly 
+#Firstly 
 Install kubectl on linux machine
 sudo apt update
 curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.27.1/2023-04-19/bin/linux/amd64/kubectl
