@@ -1,0 +1,36 @@
+vi rbac.yaml
+  120  k apply -f rbac.yaml
+  121  vi rbac.yaml
+  122  k apply -f rbac.yaml
+  123  vi rbac.yaml
+  124  k apply -f rbac.yaml
+  125  k get sa
+  126  k get clusterrole
+  127  k get clusterrolebinding | grep shekhar
+  128  k describe sa shekhar
+  129  vi rbac-token.yaml
+  130  cat rbac-token.yaml
+  131  k apply -f rbac-token.yaml
+  132  k describe sa shekhar
+  133  k describe secret shekhar-token
+  134  ls
+  135  k config view
+  136  alias k=kubectl
+  137  k config view
+  138  k config set-cluster shekhar-cluster --server="https://172.31.14.84:6443"
+  139  k config set-cluster shekhar-cluster --server="https://172.31.14.84:6443" --insecure-skip-tls-verify=true
+  140  k describe secret shekhar-token | grep token: | awk '{print $2}'
+  141  TOKEN=$(k describe secret shekhar-token | grep token: | awk '{print $2}')
+  142  echo $TOKEN
+  143  k config set-credentials shekhar --token=$TOKEN
+  144  k config set-cluster shekhar-cluster --user=shekhar --cluster=shekhar-cluster
+  145  k get node
+  146  k config use-context shekhar-cluster
+  147  k config view
+  148  k config use-context shekhar-cluster
+  149  k config set-cluster shekhar-cluster --user=shekhar --cluster=shekhar-cluster
+  150  k config set-context shekhar-cluster --user=shekhar --cluster=shekhar-cluster
+  151  k config use-context shekhar-cluster
+  152  k get node
+  153  k config use-context kubernetes-admin@kubernetes
+  154  k get node
